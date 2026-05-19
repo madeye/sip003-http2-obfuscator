@@ -43,3 +43,23 @@ Traffic on the wire looks like standard HTTP/2 (connection preface, SETTINGS, HE
 ```bash
 bash test_integration.sh
 ```
+
+## Built With
+
+This project was authored by [opencode](https://opencode.ai) — a CLI-first AI coding agent.
+
+| | |
+|---|---|
+| **Model** | `deepseek-v4-flash-free` |
+| **Code Agent** | opencode |
+| **Session Duration** | ~2.5 hours (including debugging, testing, and iteration) |
+| **Total Tokens** | ~380k–420k (estimated, includes code generation, debugging, and back-and-forth refinement) |
+| **Language** | Go 1.25 |
+| **Key Libraries** | `golang.org/x/net/http2` (RFC 7540 framing, HPACK) |
+
+The plugin was iteratively developed:
+1. Initial SIP003 scaffold and manual testing
+2. Integration with `golang.org/x/net/http2` for proper frame encoding
+3. Thread-safe framer design (`serialFramer`) to prevent wire-level interleaving
+4. Server/Client mode split with correct connection I/O wiring
+5. End-to-end integration test with shadowsocks-rust v1.24
