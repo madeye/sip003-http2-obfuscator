@@ -2,6 +2,8 @@
 
 Wraps Shadowsocks traffic in HTTP/2 frames to bypass protocol detection.
 
+It's only an example project for this blog post: https://maxlv.net/blog/diy-sip003-protocol/ **DO NOT** use it in real world use cases.
+
 ## Usage
 
 ```bash
